@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Auth;
 
 use App\Core\Support\Controller;
 use App\Core\Providers\RouteServiceProvider;
@@ -13,7 +13,7 @@ class RegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Register Controller
+    | Register Controllers
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their

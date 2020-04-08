@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Auth;
 
 use App\Core\Support\Controller;
 use App\Core\Providers\RouteServiceProvider;
@@ -10,7 +10,7 @@ class VerificationController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Email Verification Controller
+    | Email Verification Controllers
     |--------------------------------------------------------------------------
     |
     | This controller is responsible for handling email verification for any
