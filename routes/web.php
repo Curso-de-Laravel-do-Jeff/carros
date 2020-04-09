@@ -18,5 +18,8 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 Route::group(['prefix' => 'home', 'middleware' => 'auth'], function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('cars.index');
+    Route::get('/show/{id}', 'HomeController@show')->name('cars.show');
+    Route::get('/create', 'HomeController@create')->name('cars.create');
+    Route::post('/store', 'HomeController@store')->name('cars.store');
 });
