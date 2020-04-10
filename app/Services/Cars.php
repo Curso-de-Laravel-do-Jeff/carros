@@ -9,7 +9,7 @@ class Cars extends CarsApi
         try {
             return json_decode($this->put('cars'))->data;
         } catch (\Exception $e) {
-            return [];
+            return $e->getMessage();
         }
     }
 
@@ -18,7 +18,7 @@ class Cars extends CarsApi
         try {
             return json_decode($this->put('cars/show/' . $id))->data;
         } catch (\Exception $e) {
-            return [];
+            return $e->getMessage();
         }
     }
 
@@ -26,6 +26,19 @@ class Cars extends CarsApi
     {
         try {
             return json_decode($this->post('cars/store', $params))->data;
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function update(array $params, string $id)
+    {
+        try {
+            if (empty($params['value'])) {
+                $params['value'] = '';
+            }
+
+            return json_decode($this->put('cars/update/' . $id, $params))->data;
         } catch (\Exception $e) {
             return $e->getMessage();
         }

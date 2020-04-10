@@ -22,4 +22,6 @@ Route::group(['prefix' => 'home', 'middleware' => 'auth'], function () {
     Route::get('/show/{id}', 'HomeController@show')->name('cars.show');
     Route::get('/create', 'HomeController@create')->name('cars.create');
     Route::post('/store', 'HomeController@store')->name('cars.store');
+    Route::get('/edit/{id}', 'HomeController@edit')->name('cars.edit');
+    Route::put('/update/{id}', 'HomeController@update')->name('cars.update');
 });

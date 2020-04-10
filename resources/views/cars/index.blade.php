@@ -33,7 +33,7 @@
                         <td style="width: 1%" nowrap="">
                             <a href="{{ route('cars.show', $car->_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
                             &nbsp;
-                            <a href="#" class="btn btn-light btn-sm"><i class="fa fa-edit"></i></a>
+                            <a href="{{ route('cars.edit', $car->_id) }}" class="btn btn-light btn-sm"><i class="fa fa-edit"></i></a>
                             &nbsp;
                             <a href="#" class="btn btn-danger btn-sm btn-del" data-id="{{ $car->_id }}"><i class="fa fa-trash"></i></a>
                         </td>

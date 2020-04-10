@@ -35,7 +35,7 @@
                 </tbody>
             </table>
 
-            <a href="{{ route('cars.index') }}" class="btn btn-primary btn-lg">Voltar</a>
+            <a href="{{ route('cars.index') }}" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i> Voltar</a>
         </div>
     </div>
 @endsection

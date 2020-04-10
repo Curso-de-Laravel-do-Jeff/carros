@@ -26,7 +26,11 @@ class HomeController extends Controller
 
     public function create()
     {
-        return view('cars.create');
+        $car = null;
+
+        return view('cars.create', with([
+            'car' => $car
+        ]));
     }
 
     public function store(Request $request)
@@ -45,6 +49,24 @@ class HomeController extends Controller
         return view('cars.show', with([
             'car' => $car
         ]));
+    }
+
+    public function edit($id)
+    {
+        $car = $this->cars->show($id);
+
+        return view('cars.edit', with([
+            'car' => $car
+        ]));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $params = $this->toValidate($request);
+
+        $car = $this->cars->update($params, $id);
+
+        return redirect(route('cars.show', $car->_id));
     }
 
     public function toValidate($request)
